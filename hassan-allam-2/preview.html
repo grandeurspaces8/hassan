@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>حسن علام للتطوير العقاري</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--g:#c9a84c;--gl:#e8c97a;--gd:#9a7a32}
+html{scroll-behavior:smooth}
+body{background:#080808;color:#fff;font-family:'Cairo',sans-serif;direction:rtl}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#111}::-webkit-scrollbar-thumb{background:var(--g);border-radius:3px}
+@keyframes shimmer{0%{background-position:-300% center}100%{background-position:300% center}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.5)}50%{box-shadow:0 0 0 20px rgba(201,168,76,0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bgZoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+
+.shimmer{background:linear-gradient(90deg,var(--gd),var(--g),var(--gl),var(--g),var(--gd));background-size:300% auto;animation:shimmer 4s linear infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{background:linear-gradient(135deg,var(--gd),var(--g) 50%,var(--gl));color:#000;font-weight:800;font-family:'Cairo',sans-serif;border:none;cursor:pointer;transition:all .3s;display:inline-block;text-decoration:none;text-align:center;animation:pulse 2.5s infinite}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(201,168,76,.5)}
+.gline{height:2px;background:linear-gradient(90deg,transparent,var(--g),transparent)}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hbg{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.hbg img{width:100%;height:100%;object-fit:cover;animation:bgZoom 14s ease-in-out infinite alternate}
+.hbg img:nth-child(2){animation-delay:-3.5s}
+.hbg img:nth-child(3){animation-delay:-7s}
+.hbg img:nth-child(4){animation-delay:-10.5s}
+.hov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,.82),rgba(0,0,0,.68),rgba(8,8,8,1))}
+.hbody{position:relative;z-index:2;text-align:center;padding:40px 20px;max-width:920px;width:100%;margin:0 auto;animation:fadeUp .9s ease forwards}
+.hlogo{height:88px;object-fit:contain;margin:0 auto 32px;display:block;filter:drop-shadow(0 6px 30px rgba(0,0,0,.9))}
+h1.htitle{font-size:clamp(26px,5.5vw,60px);font-weight:900;line-height:1.25;margin-bottom:20px;color:#fff}
+.hsub{color:#ccc;font-size:clamp(14px,2vw,19px);max-width:620px;margin:0 auto 40px;line-height:1.85}
+.plinks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+.pl{display:block;padding:13px 8px;border-radius:14px;text-align:center;font-size:13px;font-weight:700;color:#fff;border:1px solid rgba(201,168,76,.38);text-decoration:none;transition:all .3s;font-family:'Cairo',sans-serif;background:rgba(255,255,255,.04);backdrop-filter:blur(8px)}
+.pl:hover{border-color:var(--g);background:rgba(201,168,76,.12);transform:translateY(-2px)}
+@media(max-width:580px){.plinks{grid-template-columns:repeat(2,1fr)}}
+
+/* FORM */
+.fwrap{max-width:460px;margin:0 auto}
+.fbox{background:rgba(8,8,8,.88);border:1px solid rgba(201,168,76,.28);border-radius:22px;padding:32px;backdrop-filter:blur(12px)}
+.ftitle{color:var(--g);font-size:22px;font-weight:800;text-align:center;margin-bottom:8px}
+.fsub{color:#999;font-size:13px;text-align:center;margin-bottom:22px;line-height:1.75}
+.inp{width:100%;padding:14px 18px;border-radius:13px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);color:#fff;font-family:'Cairo',sans-serif;font-size:15px;outline:none;margin-bottom:14px;transition:all .3s;direction:rtl}
+.inp:focus{border-color:var(--g);background:rgba(201,168,76,.07)}
+.inp::placeholder{color:#666}
+.ok{border-radius:18px;padding:44px 24px;text-align:center;background:rgba(0,0,0,.75);border:1px solid rgba(201,168,76,.3)}
+
+/* SECTIONS */
+.sec{padding:90px 0}
+.sa{background:#0b0b0b}.sb{background:#0f0f0f}
+.w{max-width:980px;margin:0 auto;padding:0 24px}
+.slogo{max-height:78px;object-fit:contain;display:block;margin:0 auto 18px}
+.stitle{font-size:clamp(24px,4vw,40px);font-weight:900;text-align:center;color:#fff;margin-bottom:10px}
+.ssub{font-size:16px;color:#888;text-align:center;margin-bottom:30px}
+
+/* UNIT GRID */
+.ugrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:18px}
+@media(min-width:600px){.ugrid{grid-template-columns:repeat(4,1fr)}}
+.ucard{position:relative;border-radius:16px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:#181818}
+.ucard img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .4s}
+.ucard:hover img{transform:scale(1.1);filter:brightness(1.12)}
+.ulbl{position:absolute;bottom:0;left:0;right:0;padding:14px 10px 10px;background:linear-gradient(to top,rgba(0,0,0,.88),transparent);text-align:center;font-weight:700;font-size:14px}
+.ulbl span{background:linear-gradient(90deg,var(--g),var(--gl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* EXTRA + BANNER */
+.ximg{width:100%;border-radius:18px;height:260px;object-fit:cover;margin-bottom:18px;transition:transform .5s;display:block}
+.ximg:hover{transform:scale(1.01)}
+.banner{width:100%;border-radius:20px;overflow:hidden;margin-bottom:44px;position:relative;height:330px}
+.banner img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.banner:hover img{transform:scale(1.04)}
+.bov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),transparent 60%)}
+
+/* INFO */
+.igrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:44px}
+@media(max-width:580px){.igrid{grid-template-columns:1fr}}
+.ibox{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.12);border-radius:18px;padding:26px}
+.ibox h3{color:var(--g);font-size:17px;font-weight:700;margin-bottom:16px}
+.il{list-style:none}
+.il li{display:flex;align-items:flex-start;gap:9px;color:#bbb;font-size:14px;line-height:1.75;margin-bottom:9px}
+.il li::before{content:'';display:block;width:7px;height:7px;border-radius:50%;background:var(--g);flex-shrink:0;margin-top:6px}
+
+/* ABOUT */
+.about{background:#080808;padding:84px 0;text-align:center}
+.about p{color:#888;font-size:clamp(14px,2vw,16px);line-height:2;max-width:720px;margin:0 auto 18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.sbox{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.12);border-radius:18px;padding:30px 16px;text-align:center}
+.snum{font-size:clamp(28px,4vw,42px);font-weight:900;color:var(--g);margin-bottom:6px}
+.slbl{font-size:13px;color:#777}
+
+/* PAY */
+.paysec{background:#080808;padding:84px 0}
+.paygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:60px}
+.pbox{text-align:center;background:linear-gradient(160deg,rgba(201,168,76,.1),rgba(201,168,76,.02));border:1px solid rgba(201,168,76,.22);border-radius:18px;padding:32px 12px;transition:all .3s}
+.pbox:hover{transform:translateY(-4px);border-color:var(--g)}
+.pico{font-size:44px;margin-bottom:12px}
+.plbl{color:#fff;font-weight:800;font-size:16px}
+
+/* FOOTER */
+footer{background:#000;border-top:1px solid rgba(201,168,76,.2);padding:56px 20px;text-align:center}
+.flogo{height:52px;object-fit:contain;margin:0 auto 28px;display:block}
+.fcopy{color:#444;font-size:13px;margin-top:20px}
+.fcopy a{color:#555;text-decoration:none;transition:color .3s}.fcopy a:hover{color:var(--g)}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hbg">
+    <img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/hapx-1024x576.jpg" alt=""/>
+    <img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/swanx-1024x576.jpg" alt=""/>
+    <img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/swanz-1024x576.jpg" alt=""/>
+    <img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/swanc-1024x576.jpg" alt=""/>
+  </div>
+  <div class="hov"></div>
+  <div class="hbody">
+    <img class="hlogo" src="https://properties.hassanallameg-developments.com/wp-content/uploads/2021/11/hassan-allam-logo-white.png" alt="Hassan Allam"/>
+    <h1 class="htitle">امتلك وحدتك بأضخم مشاريع<br/><span class="shimmer">شركة حسن علام للتطوير العقاري</span></h1>
+    <p class="hsub">شركة حسن علام من أكبر شركات العقارات في مصر والشرق الأوسط — تجربة سكنية استثنائية منذ عام ١٩٣٦</p>
+    <nav class="plinks">
+      <a class="pl" href="#sw-nc">Swan Lake القاهرة الجديدة</a>
+      <a class="pl" href="#haptown">Hap Town المستقبل</a>
+      <a class="pl" href="#sw-oct">Swan Lake 6 أكتوبر</a>
+      <a class="pl" href="#sw-north">Swan Lake الساحل</a>
+    </nav>
+    <div class="fwrap">
+      <div class="fbox" id="hf">
+        <p class="ftitle">تسجيل البيانات</p>
+        <p class="fsub">يرجى تسجيل الاسم ورقم الموبايل وسيقوم أحد أفراد قسم المبيعات بالتواصل معك في أقرب وقت</p>
+        <input class="inp" type="text" placeholder="الاسم" id="hfn"/>
+        <input class="inp" type="tel" placeholder="رقم الموبايل" id="hfm"/>
+        <button class="btn" onclick="go('hf','hfn','hfm')" style="width:100%;padding:16px;border-radius:13px;font-size:17px">تسجيل</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="w">
+    <div class="gline" style="max-width:200px;margin:0 auto 44px"></div>
+    <h2 style="font-size:clamp(22px,4vw,34px);font-weight:900;margin-bottom:22px">شركة حسن علام للتطوير العقاري</h2>
+    <p>شركة حسن علام من أكبر شركات العقارات في مصر وأيضاً الشرق الأوسط، فقد حققت الشركة إنجازاً ملحوظاً داخل سوق العقارات وذلك بتنفيذها العديد من المشاريع العقارية الناجحة.</p>
+    <p style="color:#666">تأسست عام 1936 وقد توسعت لتصل إلى دول الشرق الأوسط، وشاركت في الإصلاح الاقتصادي لمصر. حصلت على شهادة الأيزو عام 2015 ووسام الاستحقاق من الدرجة الأولى بتنفيذها كوبري الميرغني.</p>
+    <div class="stats">
+      <div class="sbox"><div class="snum">1936</div><div class="slbl">تأسست عام</div></div>
+      <div class="sbox"><div class="snum">+15,000</div><div class="slbl">وحدة سكنية</div></div>
+      <div class="sbox"><div class="snum">+80</div><div class="slbl">عاماً من الخبرة</div></div>
+    </div>
+    <div class="gline" style="max-width:200px;margin:44px auto 0"></div>
+  </div>
+</section>
+
+<!-- SWAN LAKE RESIDENCE -->
+<section class="sec sa" id="sw-nc">
+  <div class="w">
+    <img class="slogo" src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/swpng.png" alt="Swan Lake Residence"/>
+    <h2 class="stitle">Swan Lake Residence كمبوند</h2>
+    <p class="ssub">مشروع سكني راقي في قلب القاهرة الجديدة</p>
+    <div class="gline" style="max-width:160px;margin:0 auto 38px"></div>
+    <div class="ugrid">
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sw5.jpg" alt=""/><div class="ulbl"><span>Apartments</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sw3.jpg" alt=""/><div class="ulbl"><span>Townhouses</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sw2.jpg" alt=""/><div class="ulbl"><span>Twin Houses</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sw1.jpg" alt=""/><div class="ulbl"><span>Standalone Villas</span></div></div>
+    </div>
+    <img class="ximg" src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sw4.jpg" alt="Swan Lake"/>
+    <div class="banner"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sw6.jpg" alt="Swan Lake"/><div class="bov"></div></div>
+    <div class="igrid">
+      <div class="ibox"><h3>📍 موقع Swan Lake Residence</h3><ul class="il">
+        <li>موقع فريد على مقربة من الطريق الدائري أهم محاور مدينة القاهرة</li>
+        <li>يقع بالقرب من فندق جي دبليو ماريوت ومشروع ميراج سيتي</li>
+        <li>يمكن الوصول للقاهرة الجديدة في غضون دقائق معدودة بالسيارة</li>
+        <li>يقع بالقرب من محطة بنزين مصر للبترول في الجهة الشمالية</li>
+        <li>موقع قريب جداً من الجامعة الأمريكية ويفصله عنها دقائق قليلة</li>
+      </ul></div>
+      <div class="ibox"><h3>✨ خدمات ومميزات الكمبوند</h3><ul class="il">
+        <li>مناطق مخصصة للأطفال وحمامات السباحة</li>
+        <li>عدد كبير من الكافيهات والمطاعم الفاخرة</li>
+        <li>أماكن خاصة للحيوانات الأليفة</li>
+        <li>خدمات الحراسة والأمن وكاميرات مراقبة حديثة</li>
+        <li>مساحات خضراء واسعة وبحيرات كريستالية ونوافير</li>
+        <li>مركز طبي كبير ونادي اجتماعي ضخم</li>
+      </ul></div>
+    </div>
+    <div class="fwrap"><div class="fbox" id="f1">
+      <p class="ftitle">تسجيل البيانات</p>
+      <input class="inp" type="text" placeholder="الاسم" id="f1n"/>
+      <input class="inp" type="tel" placeholder="رقم الموبايل" id="f1m"/>
+      <button class="btn" onclick="go('f1','f1n','f1m')" style="width:100%;padding:15px;border-radius:13px;font-size:16px">تسجيل</button>
+    </div></div>
+  </div>
+</section>
+
+<!-- HAP TOWN -->
+<section class="sec sb" id="haptown">
+  <div class="w">
+    <img class="slogo" src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/haptown.png" alt="Hap Town"/>
+    <h2 class="stitle">مدينة المستقبل Hap Town كمبوند</h2>
+    <p class="ssub">مجمع سكني متكامل في مدينة المستقبل بالقاهرة الجديدة</p>
+    <div class="gline" style="max-width:160px;margin:0 auto 38px"></div>
+    <div class="ugrid">
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/hap4.jpg" alt=""/><div class="ulbl"><span>Apartments</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/hap8.jpg" alt=""/><div class="ulbl"><span>Townhouses</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/hap7.jpg" alt=""/><div class="ulbl"><span>Twin Houses</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/hap6.jpg" alt=""/><div class="ulbl"><span>Standalone Villas</span></div></div>
+    </div>
+    <img class="ximg" src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/hap1.jpg" alt="Hap Town"/>
+    <div class="banner"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/hap2.jpg" alt="Hap Town"/><div class="bov"></div></div>
+    <div class="igrid">
+      <div class="ibox"><h3>📍 موقع Hap Town</h3><ul class="il">
+        <li>يقع في الامتداد الشرقي للقاهرة الجديدة في مدينة المستقبل</li>
+        <li>قريب من محور محمد بن زايد الرابط بين القاهرة الجديدة والعاصمة الإدارية</li>
+        <li>قريب جداً من كمبوند ماونتن فيو القاهرة الجديدة الشهير</li>
+        <li>الجامعة الأمريكية (الموقع الجديد) على مقربة من الكمبوند</li>
+        <li>يقع بالقرب من كمبوند ميفيدا وهايد بارك</li>
+      </ul></div>
+      <div class="ibox"><h3>✨ خدمات ومميزات الكمبوند</h3><ul class="il">
+        <li>مناطق ترفيهية للأطفال وملاعب رياضية كبيرة</li>
+        <li>حمامات سباحة خاصة بالفيلات المستقلة</li>
+        <li>عدد من البحيرات الصناعية ومكان لركوب الدراجات</li>
+        <li>مجمع ومول تجاري ضخم وصيدليات تعمل 24 ساعة</li>
+        <li>جراجات متطورة ونادي رياضي كبير</li>
+      </ul></div>
+    </div>
+    <div class="fwrap"><div class="fbox" id="f2">
+      <p class="ftitle">تسجيل البيانات</p>
+      <input class="inp" type="text" placeholder="الاسم" id="f2n"/>
+      <input class="inp" type="tel" placeholder="رقم الموبايل" id="f2m"/>
+      <button class="btn" onclick="go('f2','f2n','f2m')" style="width:100%;padding:15px;border-radius:13px;font-size:16px">تسجيل</button>
+    </div></div>
+  </div>
+</section>
+
+<!-- SWAN LAKE OCTOBER -->
+<section class="sec sa" id="sw-oct">
+  <div class="w">
+    <img class="slogo" src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/swanlaker.png" alt="Swan Lake October"/>
+    <h2 class="stitle">مدينة 6 أكتوبر Swan Lake كمبوند</h2>
+    <p class="ssub">واحد من أهم وأفخم التجمعات السكنية في مدينة 6 أكتوبر</p>
+    <div class="gline" style="max-width:160px;margin:0 auto 38px"></div>
+    <div class="ugrid">
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/slw8.jpg" alt=""/><div class="ulbl"><span>Townhouses</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/slw7.jpg" alt=""/><div class="ulbl"><span>Twin Houses</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/slw6.jpg" alt=""/><div class="ulbl"><span>Standalone Villas</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/slw2.jpg" alt=""/><div class="ulbl"><span>Views</span></div></div>
+    </div>
+    <div class="banner"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/slw5.jpg" alt="Swan Lake October"/><div class="bov"></div></div>
+    <div class="igrid">
+      <div class="ibox"><h3>📍 موقع Swan Lake أكتوبر</h3><ul class="il">
+        <li>يفصله 6 دقائق عن مستشفى دار الفؤاد ودريم لاند</li>
+        <li>بالقرب من هايبر وان ومول العرب بـ 8 كم فقط</li>
+        <li>يبعُد عن المدرسة البريطانية الدولية بخطوات</li>
+        <li>يمكن الوصول عبر الطريق الدائري وطريق الفيوم والواحات</li>
+        <li>يبتعد عن مول مصر بـ 4 دقائق فقط</li>
+        <li>يوجد على بُعد 8 دقائق من كابيتال بيزنس بارك</li>
+      </ul></div>
+      <div class="ibox"><h3>✨ خدمات ومميزات الكمبوند</h3><ul class="il">
+        <li>نادي اجتماعي ونادي صحي بأجهزة حديثة</li>
+        <li>مول تجاري وأماكن مُخصصة للأطفال</li>
+        <li>البحيرات الصناعية ونوافير مائية</li>
+        <li>جيم رياضي بأحدث الأجهزة</li>
+        <li>جراجات لجميع الوحدات وخدمات تنظيف دائم</li>
+      </ul></div>
+    </div>
+    <div class="fwrap"><div class="fbox" id="f3">
+      <p class="ftitle">تسجيل البيانات</p>
+      <input class="inp" type="text" placeholder="الاسم" id="f3n"/>
+      <input class="inp" type="tel" placeholder="رقم الموبايل" id="f3m"/>
+      <button class="btn" onclick="go('f3','f3n','f3m')" style="width:100%;padding:15px;border-radius:13px;font-size:16px">تسجيل</button>
+    </div></div>
+  </div>
+</section>
+
+<!-- SWAN LAKE NORTH COAST -->
+<section class="sec sb" id="sw-north">
+  <div class="w">
+    <img class="slogo" src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/swanlaken.png" alt="Swan Lake North Coast"/>
+    <h2 class="stitle">الساحل الشمالي Swan Lake كمبوند</h2>
+    <p class="ssub">من أرقى منتجعات الساحل الشمالي التي تتمتع بالتصميم المعماري الرائع</p>
+    <div class="gline" style="max-width:160px;margin:0 auto 38px"></div>
+    <div class="ugrid">
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sn6.jpg" alt=""/><div class="ulbl"><span>Chalets</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sn5.jpg" alt=""/><div class="ulbl"><span>Twin Houses</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sn4.jpg" alt=""/><div class="ulbl"><span>Standalone Villas</span></div></div>
+      <div class="ucard"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sn2.jpg" alt=""/><div class="ulbl"><span>Views</span></div></div>
+    </div>
+    <div class="banner"><img src="https://properties.hassanallameg-developments.com/wp-content/uploads/2022/12/sn1.jpg" alt="Swan Lake North Coast"/><div class="bov"></div></div>
+    <div class="igrid">
+      <div class="ibox"><h3>📍 موقع Swan Lake الساحل</h3><ul class="il">
+        <li>موقع استراتيجي في منطقة سيدي عبد الرحمن على الساحل الشمالي</li>
+        <li>إطلالة مميزة على طريق الإسكندرية – مطروح الساحلي</li>
+        <li>قريبة من طريق فوكه الجديد — ساعة ونصف من القاهرة</li>
+        <li>مُحاطة برأس الحكمة والعلمين الجديدة</li>
+        <li>تبعد عن الإسكندرية بمسافة ساعة ونصف فقط</li>
+      </ul></div>
+      <div class="ibox"><h3>✨ خدمات ومميزات القرية</h3><ul class="il">
+        <li>أكبر أكوا بارك ومراكز الغطس</li>
+        <li>كلوب هاوس بإطلالة خلابة على البحر</li>
+        <li>اطلالة مباشرة لجميع الوحدات على البحر</li>
+        <li>بحيرات كريستالية ومستشفيات وعيادات تخصصية</li>
+        <li>مولات تضم أشهر البراندات العالمية</li>
+      </ul></div>
+    </div>
+    <div class="fwrap"><div class="fbox" id="f4">
+      <p class="ftitle">تسجيل البيانات</p>
+      <input class="inp" type="text" placeholder="الاسم" id="f4n"/>
+      <input class="inp" type="tel" placeholder="رقم الموبايل" id="f4m"/>
+      <button class="btn" onclick="go('f4','f4n','f4m')" style="width:100%;padding:15px;border-radius:13px;font-size:16px">تسجيل</button>
+    </div></div>
+  </div>
+</section>
+
+<!-- PAY CTA -->
+<section class="paysec">
+  <div class="w">
+    <div class="paygrid">
+      <div class="pbox"><div class="pico">🏠</div><div class="plbl">متوفر مساحات مختلفة</div></div>
+      <div class="pbox"><div class="pico">📅</div><div class="plbl">أقساط حتى 10 سنوات</div></div>
+      <div class="pbox"><div class="pico">💰</div><div class="plbl">بمقدمات تبدأ من 5%</div></div>
+    </div>
+    <h2 style="font-size:clamp(22px,4vw,34px);font-weight:900;text-align:center;margin-bottom:36px">للاستفسار والتواصل مع قسم المبيعات</h2>
+    <div class="fwrap"><div class="fbox" id="f5">
+      <p class="ftitle">تسجيل البيانات</p>
+      <p class="fsub">يرجى تسجيل الاسم ورقم الموبايل وسيقوم أحد أفراد قسم المبيعات بالتواصل معك في أقرب وقت</p>
+      <input class="inp" type="text" placeholder="الاسم" id="f5n"/>
+      <input class="inp" type="tel" placeholder="رقم الموبايل" id="f5m"/>
+      <button class="btn" onclick="go('f5','f5n','f5m')" style="width:100%;padding:16px;border-radius:13px;font-size:17px">تسجيل</button>
+    </div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img class="flogo" src="https://properties.hassanallameg-developments.com/wp-content/uploads/2021/11/hassan-allam-logo-white.png" alt="Hassan Allam Properties"/>
+  <div><a href="tel:+201005721414" class="btn" style="padding:15px 44px;border-radius:50px;font-size:18px;margin-bottom:28px">📞 اتصل بنا: 01005721414</a></div>
+  <div class="gline" style="max-width:220px;margin:0 auto 20px"></div>
+  <p class="fcopy">All Rights Reserved © Curve Real Estate | <a href="#">Privacy Policy &amp; Terms of Service</a></p>
+</footer>
+
+<script>
+function go(fid,nid,mid){
+  const n=document.getElementById(nid).value.trim();
+  const m=document.getElementById(mid).value.trim();
+  if(!n||!m){alert('يرجى ملء جميع الحقول');return}
+  document.getElementById(fid).innerHTML=`<div class="ok"><div style="font-size:54px;margin-bottom:14px">✅</div><div style="color:var(--g);font-size:21px;font-weight:800">شكراً لتواصلك معنا</div><div style="color:#aaa;margin-top:10px;font-size:14px">سيتواصل معك فريق المبيعات في أقرب وقت</div></div>`
+}
+</script>
+</body>
+</html>
